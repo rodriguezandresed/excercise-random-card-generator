@@ -42,7 +42,7 @@ botPip.style.transform = "rotate(180deg)"
 
 
 
-topPip.style.color = botPip.style.color = getRandomPipColor();
+
 topPip.innerHTML = botPip.innerHTML = getRandomPip();
 midPip.innerHTML = getRandomInt();
 
@@ -71,12 +71,10 @@ function getRandomPip() {
 
 }
 
-function getRandomPipColor() {
-    min = Math.ceil(1);
-    max = Math.floor(2);
-   let sentinel = Math.floor(Math.random() * (max - min + 1)) + min;
-   if (sentinel == 1){return "red"} else {return "black"}
 
-}
+topPip.classList.add(`${topPip.innerHTML == "♥" || topPip.innerHTML == "♦" ? "red" : "black"}`);
+botPip.classList.add( `${botPip.innerHTML == "♥" || botPip.innerHTML == "♦" ? "red" : "black"}`);
+
+
 
 }
